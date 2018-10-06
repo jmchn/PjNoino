@@ -43,7 +43,7 @@ CREATE TABLE `comments` (
   KEY `comment_karma_index` (`comment_likes`),
   KEY `uncivil_index` (`comment_adhom_when`),
   FULLTEXT KEY `comment_content_index` (`comment_content`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -59,7 +59,7 @@ CREATE TABLE `commentvotes` (
   `commentvote_up` bigint(20) unsigned NOT NULL DEFAULT '0',
   `commentvote_down` bigint(20) unsigned NOT NULL DEFAULT '0',
   UNIQUE KEY `uniqueness` (`commentvote_user_id`,`commentvote_comment_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -76,7 +76,7 @@ CREATE TABLE `countries` (
   `country_evil` bigint(20) unsigned NOT NULL DEFAULT '0',
   KEY `country_start_index` (`country_start`),
   KEY `country_end_index` (`country_end`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,7 +90,7 @@ CREATE TABLE `lurkers` (
   `lurker_username` varchar(40) NOT NULL,
   `lurker_last_view` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`lurker_username`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -110,7 +110,7 @@ CREATE TABLE `newslinks` (
   PRIMARY KEY (`newslink_id`),
   UNIQUE KEY `uniqueness` (`newslink_url`),
   KEY `newslink_pubdate_index` (`newslink_pubdate`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -127,7 +127,7 @@ CREATE TABLE `nukes` (
   `nuke_ip` varchar(16) DEFAULT NULL,
   `nuke_country` varchar(40) DEFAULT NULL,
   UNIQUE KEY `ip_address` (`nuke_ip`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -142,7 +142,7 @@ CREATE TABLE `onlines` (
   `online_username` varchar(40) NOT NULL,
   `online_last_view` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`online_user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -176,7 +176,7 @@ CREATE TABLE `posts` (
   KEY `post_modified_index` (`post_modified`),
   KEY `post_title_index` (`post_title`),
   FULLTEXT KEY `post_title_content_index` (`post_title`,`post_content`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -193,7 +193,7 @@ CREATE TABLE `postviews` (
   `postview_want_email` bigint(20) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`postview_user_id`,`postview_post_id`),
   KEY `post_ID_index` (`postview_post_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -209,7 +209,7 @@ CREATE TABLE `postvotes` (
   `postvote_up` bigint(20) unsigned NOT NULL DEFAULT '0',
   `postvote_down` bigint(20) unsigned NOT NULL DEFAULT '0',
   UNIQUE KEY `uniqueness` (`postvote_user_id`,`postvote_post_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -227,7 +227,7 @@ CREATE TABLE `relationships` (
   `rel_i_follow` bigint(20) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`rel_self_id`,`rel_other_id`),
   KEY `other_ID_index` (`rel_other_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -278,7 +278,7 @@ CREATE TABLE `users` (
   KEY `user_comments_index` (`user_comments`),
   KEY `last_comment_ip_index` (`user_last_comment_ip`),
   KEY `user_stripe_id_index` (`user_stripe_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
