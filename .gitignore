@@ -5,3 +5,4 @@ html/housing/
 html/resume.txt
 html/uploads/*
 node/node_modules/
+node/_conf.json
