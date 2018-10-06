@@ -1,0 +1,7 @@
+*.swp
+_*
+html/favicon.ico
+html/housing/
+html/resume.txt
+html/uploads/*
+node/node_modules/
