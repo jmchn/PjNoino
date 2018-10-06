@@ -127,7 +127,7 @@ CREATE TABLE `nukes` (
   `nuke_ip` varchar(16) DEFAULT NULL,
   `nuke_country` varchar(40) DEFAULT NULL,
   UNIQUE KEY `ip_address` (`nuke_ip`)
-) EFAULT CHARSET=utf8mb4;
+) DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
